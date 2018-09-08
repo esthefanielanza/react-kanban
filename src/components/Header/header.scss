@@ -1,14 +1,14 @@
 .header {
   background-color: rgb(255, 255, 255);
-  height: 50px;
+  height: 65px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
   justify-content: space-between;
   align-items: center;
   display: flex;
   padding: 10px 30px;
-  position: fixed;
-  top: 0;
   width: 100%;
+  position: absolute;
+  box-sizing: border-box;
 
   &__title {
     margin: 0;

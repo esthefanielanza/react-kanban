@@ -1,35 +1,59 @@
 .board {
+  height: 100%;
+
   &__body {
-    margin-top: 70px;
-    padding: 30px;
-  }
-}
-
-.button {
-  background: rgba(21, 225, 213, 1);
-  color: white;
-  padding: 0.8rem;
-  border-radius: 6px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  width: 100%;
-
-  &__icon {
-    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 90px 30px 30px;
+    box-sizing: border-box;
   }
 
-  &:hover {
-    opacity: 0.4;
-    background: black;
+  &__carousel {
+    height: 100%;
+    display: flex;
+    padding: 20px;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 10px;
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(21, 225, 213, 1);
+    }
   }
 
-  @media screen and (min-width: 768px) {
-    width: auto;
+  .button {
+    background: rgba(21, 225, 213, 1);
+    color: white;
+    padding: 0.8rem;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    width: 100%;
+    outline: inherit;
+    align-self: flex-start;
+
+    &__icon {
+      margin-left: 16px;
+    }
+
+    &:hover {
+      opacity: 0.4;
+      background: black;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: auto;
+    }
   }
 }
