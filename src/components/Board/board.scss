@@ -26,8 +26,37 @@
     }
   }
 
+  &__modal {
+    &__header {
+      b {
+        color: rgba(21, 225, 213, 1);
+      }
+    }
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    &__button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+  }
+
+  input {
+    padding: 20px 10px;
+    border: 2px solid rgba(21, 225, 213, 1);
+    width: 100%;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
   .button {
-    background: rgba(21, 225, 213, 1);
+    background-color: rgba(21, 225, 213, 1);
     color: white;
     padding: 0.8rem;
     border-radius: 6px;
@@ -36,24 +65,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
-    font: inherit;
-    cursor: pointer;
     width: 100%;
-    outline: inherit;
     align-self: flex-start;
-
-    &__icon {
-      margin-left: 16px;
-    }
 
     &:hover {
       opacity: 0.4;
       background: black;
     }
 
+    &--outlined {
+      background: transparent;
+      border: 2px solid rgba(21, 225, 213, 1);
+      color: rgba(21, 225, 213, 1);
+      padding: calc(0.8rem - 2px);
+      margin-right: 20px;
+
+      &:hover {
+        background-color: rgba(21, 225, 213, 1);
+        color: white;
+        opacity: 1;
+      }
+    }
+
     @media screen and (min-width: 768px) {
       width: auto;
+    }
+
+    &__icon {
+      margin-left: 16px;
+    }
+
+    &--large {
+      @media screen and (min-width: 768px) {
+        width: 100%;
+      }
     }
   }
 }
