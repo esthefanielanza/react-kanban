@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import { Add } from '@material-ui/icons';
 import Proptypes from 'prop-types';
 
 import Header from '../Header';
@@ -62,15 +61,9 @@ class Board extends Component {
 
     return (
       <Fragment>
-        <Header />
+        <Header onAddColumn={() => this.setState({ isModalOpen: true, modalType: 'ADD' })} />
         <div className={CN}>
           <section className={`${CN}__body`}>
-            <div className={`${CN}__buttons`}>
-              <button className="button" onClick={() => this.setState({ isModalOpen: true, modalType: 'ADD' })}>
-                Add new column
-                <Add className="button__icon" />
-              </button>
-            </div>
             <section className={`${CN}__carousel`}>
               {data.map((column, idx) => (
                 <Column
