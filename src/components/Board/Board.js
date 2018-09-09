@@ -18,9 +18,9 @@ class Board extends Component {
   };
 
   _renderModalButtons = (confirmAction, confirmText) => (
-    <div className={`${CN}__modal__button-container`}>
+    <div className="modal__button-container">
       <button className="button button--outlined button--large" onClick={() => this.setState({ isModalOpen: false })}>
-        Cancelar
+        Cancel
       </button>
       <button
         className="button button--large"
@@ -35,24 +35,24 @@ class Board extends Component {
   );
 
   _renderRemoveModal = (title, onRemoveColumn) => (
-    <div className={`${CN}__modal__container`}>
-      <div className={`${CN}__modal__header`}>
+    <div className="modal__children">
+      <div className="modal__header">
         <h2>
-          Você tem certeza que deseja remover a coluna <b>"{title}"</b> ?
+          Are you sure that you want to remove the column <b>"{title}"</b> ?
         </h2>
-        <p> Todos os seus cards pertecentes a essa coluna também serão removidos. </p>
+        <p> All the column cards will also be removed. </p>
       </div>
-      {this._renderModalButtons(onRemoveColumn, 'Remover')}
+      {this._renderModalButtons(onRemoveColumn, 'Remove')}
     </div>
   );
 
   _renderAddModal = (onAddColumn, onChange) => (
-    <div className={`${CN}__modal__container`}>
-      <div className={`${CN}__modal__header`}>
-        <h2>Adicione uma nova coluna</h2>
-        <input placeholder="Titulo" onChange={e => onChange({ addInput: e.target.value })} />
+    <div className="modal__children">
+      <div className="modal__header">
+        <h2>Add a new Column</h2>
+        <input placeholder="Title" onChange={e => onChange({ addInput: e.target.value })} />
       </div>
-      {this._renderModalButtons(onAddColumn, 'Adicionar')}
+      {this._renderModalButtons(onAddColumn, 'Add')}
     </div>
   );
 
@@ -65,10 +65,12 @@ class Board extends Component {
         <Header />
         <div className={CN}>
           <section className={`${CN}__body`}>
-            <button className="button" onClick={() => this.setState({ isModalOpen: true, modalType: 'ADD' })}>
-              Adicionar nova coluna
-              <Add className="button__icon" />
-            </button>
+            <div className={`${CN}__buttons`}>
+              <button className="button" onClick={() => this.setState({ isModalOpen: true, modalType: 'ADD' })}>
+                Add new column
+                <Add className="button__icon" />
+              </button>
+            </div>
             <section className={`${CN}__carousel`}>
               {data.map((column, idx) => (
                 <Column

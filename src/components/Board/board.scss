@@ -9,41 +9,24 @@
     box-sizing: border-box;
   }
 
+  &__buttons {
+    margin-bottom: 20px;
+  }
+
   &__carousel {
-    height: 100%;
+    height: auto;
     display: flex;
-    padding: 20px;
     overflow-x: auto;
 
     &::-webkit-scrollbar {
-      height: 10px;
+      height: 5px;
+      width: 5px;
       box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
       background-color: rgba(0, 0, 0, 0.1);
     }
 
     &::-webkit-scrollbar-thumb {
       background-color: rgba(21, 225, 213, 1);
-    }
-  }
-
-  &__modal {
-    &__header {
-      b {
-        color: rgba(21, 225, 213, 1);
-      }
-    }
-
-    &__container {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-    }
-
-    &__button-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
     }
   }
 
@@ -99,6 +82,10 @@
       @media screen and (min-width: 768px) {
         width: 100%;
       }
+    }
+
+    &--centered {
+      align-self: center;
     }
   }
 }

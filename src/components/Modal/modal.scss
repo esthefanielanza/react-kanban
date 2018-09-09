@@ -29,4 +29,23 @@
       width: 500px;
     }
   }
+
+  &__header {
+    b {
+      color: rgba(21, 225, 213, 1);
+    }
+  }
+
+  &__children {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
 }

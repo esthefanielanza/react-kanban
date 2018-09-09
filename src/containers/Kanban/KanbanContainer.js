@@ -7,22 +7,29 @@ class KanbanContainer extends Component {
     board: [
       {
         title: 'To Do',
-        itens: []
+        items: [
+          { title: 'Test', description: 'This is a test card!!' },
+          { title: 'Test', description: 'This is a test card!!' },
+          { title: 'Test', description: 'This is a test card!!' },
+          { title: 'Test', description: 'This is a test card!!' },
+          { title: 'Test', description: 'This is a test card!!' },
+          { title: 'Test', description: 'This is a test card!!' }
+        ]
       },
       {
         title: 'Doing',
-        itens: []
+        items: []
       },
       {
         title: 'Done',
-        itens: []
+        items: []
       }
     ]
   };
 
   _onAddColumn = () => {
     const board = this.state.board.slice();
-    board.push({ title: this.state.addInput, itens: [] });
+    board.push({ title: this.state.addInput, items: [] });
     this.setState({ board, title: '' });
   };
 
