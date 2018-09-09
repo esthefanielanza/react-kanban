@@ -3,13 +3,13 @@
   background-color: white;
   min-width: 240px;
   margin-right: 20px;
-  padding: 40px;
+  padding: 30px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   height: 100%;
 
   @media screen and (min-width: 768px) {
-    min-width: 460px;
+    min-width: 300px;
   }
 
   &__title {
