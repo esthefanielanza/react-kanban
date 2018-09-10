@@ -12,10 +12,10 @@ class Card extends Component {
   };
 
   render() {
-    const { title, description, onRemove, index } = this.props;
+    const { title, description, onRemove, onMove, index } = this.props;
     const { hover } = this.state;
     const colors = ['#7DFF0D', '#E89F0C', '#FF0000', '#0DFFF1', '#3D0CE8'];
-    const cardColor = colors[index % colors.length];
+    const cardColor = colors[(index + title.length + description.length) % colors.length];
     const border = `2px solid ${cardColor}`;
     const moveButtonStyle = hover
       ? { color: 'white', backgroundColor: cardColor, border }
@@ -34,6 +34,7 @@ class Card extends Component {
           <button
             className="button button--outlined"
             style={moveButtonStyle}
+            onClick={onMove}
             onMouseOver={() => this.setState({ hover: true })}
             onMouseLeave={() => this.setState({ hover: false })}
           >
@@ -49,14 +50,16 @@ Card.propTypes = {
   title: Proptypes.string,
   description: Proptypes.string,
   onRemove: Proptypes.func,
-  index: Proptypes.number
+  index: Proptypes.number,
+  onMove: Proptypes.func
 };
 
 Card.defaultProps = {
   title: '',
   description: '',
   onRemove: () => {},
-  index: 0
+  index: 0,
+  onMove: () => {}
 };
 
 export default Card;

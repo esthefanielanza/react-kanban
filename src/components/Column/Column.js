@@ -8,7 +8,7 @@ import './column.scss';
 
 const CN = 'column';
 
-const Column = ({ title, items, onRemove }) => {
+const Column = ({ title, items, onRemove, onRemoveTask, onMoveTask, onAddTask }) => {
   return (
     <div className={CN}>
       <button className={`${CN}__remove`} onClick={onRemove}>
@@ -18,10 +18,16 @@ const Column = ({ title, items, onRemove }) => {
       <div className={`${CN}__body`}>
         <div className={`${CN}__items`}>
           {items.map((item, idx) => (
-            <Card key={idx} index={idx} {...item} />
+            <Card
+              key={idx}
+              index={idx}
+              onMove={() => onMoveTask({ ...item, idx })}
+              onRemove={() => onRemoveTask({ ...item, idx })}
+              {...item}
+            />
           ))}
         </div>
-        <button className="button button--centered" onClick={() => {}}>
+        <button className="button button--centered" onClick={onAddTask}>
           Add new task
           <Add className="button__icon" />
         </button>
@@ -33,13 +39,19 @@ const Column = ({ title, items, onRemove }) => {
 Column.propTypes = {
   title: Proptypes.string,
   items: Proptypes.array,
-  onRemove: Proptypes.func
+  onRemove: Proptypes.func,
+  onRemoveTask: Proptypes.func,
+  onMoveTask: Proptypes.func,
+  onAddTask: Proptypes.func
 };
 
 Column.defaultProps = {
   title: '',
   items: [],
-  onRemove: () => {}
+  onRemove: () => {},
+  onRemoveTask: () => {},
+  onMoveTask: () => {},
+  onAddTask: () => {}
 };
 
 export default Column;
