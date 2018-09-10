@@ -3,7 +3,7 @@
 .column {
   display: inline-block;
   background-color: $secondary-color;
-  min-width: 240px;
+  width: 240px;
   margin-right: 20px;
   padding: 30px;
   box-shadow: 5px 5px 20px $shadow;
@@ -11,7 +11,7 @@
   height: 100%;
 
   @media screen and (min-width: 768px) {
-    min-width: 300px;
+    width: 300px;
   }
 
   &__title {
