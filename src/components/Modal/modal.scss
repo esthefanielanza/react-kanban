@@ -1,3 +1,5 @@
+@import '../../assets/_colors.scss';
+
 .modal {
   &__container {
     position: fixed;
@@ -14,7 +16,7 @@
     min-width: 260px;
     max-width: 800px;
     display: inline-block;
-    background-color: white;
+    background-color: $secondary-color;
     border-radius: 8px;
     box-shadow: 0 24px 24px 0 rgba(0, 0, 0, 0.3);
     position: fixed;
@@ -32,7 +34,7 @@
 
   &__header {
     b {
-      color: rgba(21, 225, 213, 1);
+      color: $primary-color;
     }
   }
 

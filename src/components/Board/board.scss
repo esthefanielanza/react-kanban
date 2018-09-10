@@ -1,3 +1,5 @@
+@import '../../assets/_colors.scss';
+
 .board {
   height: 100%;
 
@@ -17,12 +19,12 @@
     &::-webkit-scrollbar {
       height: 5px;
       width: 5px;
-      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-      background-color: rgba(0, 0, 0, 0.1);
+      box-shadow: 5px 5px 20px $shadow;
+      background-color: $shadow;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(21, 225, 213, 1);
+      background-color: $primary-color;
     }
   }
 }
@@ -30,7 +32,7 @@
 textarea,
 input {
   padding: 20px 10px;
-  border: 2px solid rgba(21, 225, 213, 1);
+  border: 2px solid $primary-color;
   width: 100%;
   border-radius: 8px;
   margin: 10px 0px;
@@ -43,8 +45,8 @@ select {
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
-  background-color: white;
-  border: 2px solid rgba(21, 225, 213, 1);
+  background-color: $secondary-color;
+  border: 2px solid $primary-color;
 }
 
 option {
@@ -53,11 +55,11 @@ option {
 }
 
 .button {
-  background-color: rgba(21, 225, 213, 1);
-  color: white;
+  background-color: $primary-color;
+  color: $secondary-color;
   padding: 10px;
   border-radius: 6px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 5px $shadow;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -72,14 +74,14 @@ option {
 
   &--outlined {
     background: transparent;
-    border: 2px solid rgba(21, 225, 213, 1);
-    color: rgba(21, 225, 213, 1);
+    border: 2px solid $primary-color;
+    color: $primary-color;
     padding: calc(0.8rem - 2px);
     margin-right: 20px;
 
     &:hover {
-      background-color: rgba(21, 225, 213, 1);
-      color: white;
+      background-color: $primary-color;
+      color: $secondary-color;
       opacity: 1;
     }
   }
