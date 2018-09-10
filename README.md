@@ -17,7 +17,7 @@ Para iniciar este projeto vocÃª precisa ter o Yarn ou o Npm instalados em sua mÃ
 
 ou
 
-``npm install`
+`npm install`
 
 2. Para iniciar o projeto localmente
    `yarn start`
