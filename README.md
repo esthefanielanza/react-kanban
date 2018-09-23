@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Este projeto foi desenvolvido com o intuito de participar do processo seletivo da empresa nata.house onde o desafio pode ser encontrado no seguinte link https://gist.github.com/henriquesa/5ddc259c2651e5ffc4a1ccde0d4a2f8b.
+Este projeto trata-se de um quadro kanban desenvolvido em React, client-side e sem persistência de dados.
 
 ## Tecnologias Utilizadas e Decisões de Implementação
 
